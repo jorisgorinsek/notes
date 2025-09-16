@@ -1,0 +1,12 @@
+
+- All hands te plannen over verbeterpunten incident
+	- Werner / Djamel / Joris
+	- Werner: proces + verbeterpunten
+	- Djamel: impact op klant en relaties + stakeholder mgmt
+	- Joris: verbeterpunten
+		- 4 eyes principle bij aanmaken van creds
+		- wat kan nog beter op lange termijn?
+		- communicatie moet beter
+			- incidents: 
+				- stakeholder identificatie + meteen verwittingen
+				- minstens 2x dag korte sync met stakeholders (15 min debrief)

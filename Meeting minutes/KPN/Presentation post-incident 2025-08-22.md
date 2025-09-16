@@ -1,0 +1,19 @@
+-All hands te plannen over verbeterpunten incident -> 17/9 11u30 tot 12u
+	- Werner / Djamel / Joris
+	- Werner: proces + verbeterpunten
+	- Djamel: impact op klant en relaties + stakeholder mgmt
+		- Info delen over andere klanten kan niet (zeker niet in infra - chat , teams - van andere klanten)
+	- Joris: verbeterpunten
+		- 4 eyes principle bij aanmaken van creds
+		- wat kan nog beter op lange termijn?
+			- self-service management bij tenants -> wij willen die verantwoordelijkheid niet
+				- moet tegen 1 september ok zijn
+			- of zorgen dat je geen fouten kan maken
+**Algemeen**
+	- communicatie moet beter
+		-  incidents: 
+				- stakeholder identificatie + meteen verwittingen via telefoon (Kurt, Dirk)
+				- minstens 2x dag korte sync met stakeholders (15 min debrief) -> Dirk heeft dit op zich genomen (heel de dag nauw opgevolgd), die info is niet naar Kurt doorgestroomd terwijl die wel info verwacht. Duidelijke rolverdeling: wie moet die updates geven -> iemand aanduiden. Dit zou door de CISO moeten gedaan worden.
+				- Meteen alles in confluence beginnen loggen zodat er een logboek met timeline is
+				- awareness dat intern delen echt niet kan -> intern gedrag aanpassen
+				- Vervanger aanduiden voor kritieke rollen zoals DPO en CISO voor als ze met vakantie zijn.
