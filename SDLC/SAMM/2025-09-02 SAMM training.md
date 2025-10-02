@@ -111,24 +111,31 @@ level 3: full automated regression tests
 **Here, the levels don't build on top of each other!!!**
 - Specialized testing like fuzzing
 - abuse test cases
-- dos testing
+- DoS testing
 
 level 1: are you fuzzing?
 level 2: perform abuse test cases?
-level 3: perform load testing / dos tests?
+level 3: perform load testing / DoS tests?
 
 #### Security testing
-
+Do you test the software according to security best practices?
+Do you do something with the results?
 ##### Scalable baseline
-automated security testing
-level 1:
-level 2:
-level 3:
+automated security testing to detect low hanging fruit
+- SAST and DAST in place
+- customized to our env -> limit false positives
+- integrated in CI/CD
+level 1: are you using suitable tools? generate inputs = using those tools to do blackbox testing
+level 2: tune tools to minimize false positives to avoid fatigue, also minimize false negatives
+level 3: integrating this in CI. Need to track and merge this results and centralize them (defectdojo or dashboard)
 ##### Deep understanding
-Pentesting
-level 1:
-level 2:
-level 3:
+Do you do pentesting to go deeper than standard tools
+- internal manual testing to ensure 
+- regular pen testing
+- feedback loop to improve complete application portfolio
+level 1:  internal testing on high risk tests, track findings as bugs
+level 2: external pen testing
+level 3: use patterns in findings to make requirements and designs better. use them to create training and playbooks
 
 
 ### Operations
@@ -138,7 +145,7 @@ level 3:
 - Do you have metrics and use those to improve?
 ##### Incident detection
 - do you have good logs for all places and look at them?
--there is a process for incident handling - a responsible - trained - simulation
+- there is a process for incident handling - a responsible - trained - simulation
 - review the detection process
 ##### Incident response
 - is there a dedicated response team
