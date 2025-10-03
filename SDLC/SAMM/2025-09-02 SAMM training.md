@@ -1,4 +1,4 @@
-**TODO 
+**TODO** 
 - Define the scope clearly!
 - bring in some treats!
 - look at the "what is good" slides for a given activity (always there before the levels)
