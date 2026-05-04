@@ -5,6 +5,7 @@ FleetDM werkt goed met oa:
 Andere disto users:
 - Bruno - verschillende devices met verschillende distros -> Arch
 - Bram - Debian
+-
 - Dominique, Nicolas, Robin - Arch linux
 Dominique niet meer?
 
@@ -13,6 +14,31 @@ Open vraag: wat kan er niet op Ubuntu/Mint?
 Tom - Mint
 
 **Rutger en Jeroen**  BlueFin
+
+
+**Status**
+
+Robin
+- draait arch, heeft problemen gehad in het verleden met Ubuntu, personal preference. Nu op ASML project maakt minder uit door VDI
+- draait fleetdm (zie instructies), problemen gehad met versie incompat. Wazuh draaide ooit niet (aangesproken door Martin), assumptie = nu in orde
+
+Lander
+- draait nu windows (VDI werkt beter) - als distro dan liefst Fedora
+
+Rutger
+- 
+
+Nicolas
+- 
+
+Bruno
+- 
+
+Bram
+- 
+
+
+
 
 **Getting FleetDM to work on Arch linux**
 
@@ -85,3 +111,41 @@ Always use the version of `osqueryd` provided by the Fleet Orbit agent rather th
     ```
     sudo journalctl -u orbit -f
     ```
+
+
+---
+Input Robin
+
+## Fleet
+Debtap can be used to install fleet from the deb package. You can generate your own deb or use the one created by IT.
+1) Install debtap from the aur ([https://aur.archlinux.org/packages/debtap](https://aur.archlinux.org/packages/debtap))
+2) Initialize debtap: `sudo debtap -u`
+3) Optional: Generate fleet deb
+```bash
+# Install fleetctl from [https://github.com/fleetdm/fleet/releases](https://github.com/fleetdm/fleet/releases)
+fleetctl package --type=deb --fleet-url=[https://fleetdm.klarrio.com](https://fleetdm.klarrio.com) --enroll-secret=<YOUR_SECRET> --fleet-certificate=PATH_TO_YOUR_CERTIFICATE/fleet.pem
+```
+4) `debtap <path-to-deb>`
+5) `sudo pacman -U <generated-package.zst>`
+6) `sudo cp /etc/default/orbit /etc/orbit`
+7) `sudo systemctl start orbit.service`
+8) `sudo systemctl enable orbit.service`
+
+## Wazuh
+There is no Archlinux package available for Wazuh, and debtap fails. It can however be installed from source quite easily.
+1) Install dependencies, see [https://github.com/wazuh/wazuh/blob/master/INSTALL](https://github.com/wazuh/wazuh/blob/master/INSTALL). I'm not 100% sure if it's necessary, but the following package is listed as a requirement: [https://aur.archlinux.org/packages/policycoreutils](https://aur.archlinux.org/packages/policycoreutils).
+2) Clone the git repo [https://github.com/wazuh/wazuh](https://github.com/wazuh/wazuh)
+3) Checkout the right version (4.4.2)
+4) Run the installer (`sudo ./install.sh`) and follow the prompts. When asked about the type, select "agent". You can skip the certificate when prompted for it. It should ask for a URL, fill in `wazuh.klarrio.com`. For other prompts, just say yes.
+5) Store the password in the designated file and fix the permissions. See [https://documentation.wazuh.com/current/user-manual/agent-enrollment/security-options/using-password-authentication.html#linux-unix-endpoint](https://documentation.wazuh.com/current/user-manual/agent-enrollment/security-options/using-password-authentication.html#linux-unix-endpoint) - IT should know the password.
+6) `sudo systemctl start wazuh-agent`
+7) `sudo systemctl enable wazuh-agent`
+
+## DriveStrike
+Drivestrike has an installer for Archlinux. Installation should be straightforward. Don't forget to start and enable the systemd service.
+[https://app.drivestrike.com/instructions/linux/#Arch](https://app.drivestrike.com/instructions/linux/#Arch)
+
+## ClamAV
+ClamAV has a native package and good documentation. Install it and start/enable both the clamav-freshclam.service and clamav-daemon.service.
+[https://wiki.archlinux.org/title/ClamAV](https://wiki.archlinux.org/title/ClamAV)
+Note: for some reason freshclam broke on my laptop after rebooting, so check make sure it keeps running at first.
