@@ -20,9 +20,11 @@
 
 **Massive data lakes**
 - without governance, quality assurance etc -> data lakes becomes data swamp
+- mixed data types (also unstructured data)
 
 **In parallel: Data warehouses (Snowflake)**
 - SQL oriented vs code (python on data lakes)
+- structured data only
 
 **Data lakehouse**
 - e.g. delta lake
