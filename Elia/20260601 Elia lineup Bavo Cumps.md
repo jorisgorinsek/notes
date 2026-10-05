@@ -31,12 +31,20 @@ To recover:
 -> power plants to start them without power
 -> in BE, the data centers are on-site with the control centers
 
-**MCCS -> SCADA** 
 
 **Green - orange - Red** zoning in the network is defined but not ready yet.
 
 **Belgium and 50Htz grids are not connected.** So 2 separate instances are needed -> 1 BE and 1 in Neurerlande (East-G + Hamburg + Berlin)
  
 **SDLC is a gap, CISO dept is working on improving that**
-**EDP is setting up their own services, not aligned with IT**
 
+**EDP is setting up their own services, not aligned with IT**
+- what happens when the EDP people leave? They are almost all external -> big problem
+
+Is Pieter-Jan Gums capable of operating such a platform? With the proper SLA and SLOs
+
+SXP = smart energy platform, deepest integration into EDP for now 
+MCCS = SCADA, Voltcontrol is small part of it
+
+For each tenant you need separate VPN tunnels
+No data sharing facilities provided between tenants
